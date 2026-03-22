@@ -1,0 +1,63 @@
+﻿diff --git a/frontend/src/App.jsx b/frontend/src/App.jsx
+--- a/frontend/src/App.jsx
++++ b/frontend/src/App.jsx
+@@
+-  const [registrationPhoto, setRegistrationPhoto] = useState(null);
+-  const [error, setError] = useState();
++ const [registrationPhoto, setRegistrationPhoto] = useState(null);
++ const [monthlyVolunteerCount, setMonthlyVolunteerCount] = useState();
++  const [specialVolunteerCount, setSpecialVolunteerCount] = useState();
++ const [error, setError] = useState();
+@@
+-    sessionExpired:  Admin session expired. Login again.,
+-    credentialsRequired: Enter admin username and password.
++    sessionExpired: Admin session expired. Login again.,
++    credentialsRequired: Enter admin username and password.,
++    monthlyVolunteersLabel: Monthly volunteers,
++    monthlyVolunteersPlaceholder: Enter number of volunteers for monthly events,
++    specialVolunteersLabel: Special events volunteers,
++    specialVolunteersPlaceholder: Enter number of volunteers for special events
+   },
+@@
+-    sessionExpired: à®¨à®¿à®°à¯à®µà®¾à®• à®…à®®à®°à¯à®µà¯ à®®à¯à®Ÿà¯à®¤à®¤à¯. à®®à¯€à®£à¯à®Ÿà¯à®®à¯ à®‰à®³à¯à®¨à¯à®´à¯ˆà®•.,
+-    credentialsRequired: à®¨à®¿à®°à¯à®µà®¾à®• à®ªà®¯à®©à®°à¯ à®ªà¯†à®¯à®°à¯à®®à¯ à®•à®Ÿà®µà¯à®šà¯à®šà¯Šà®²à¯ à®®à¯.
++    sessionExpired: à®¨à®¿à®°à¯à®µà®¾à®• à®…à®®à®°à¯à®µà¯ à®®à¯à®Ÿà¯à®¤à®¤à¯. à®®à¯€à®£à¯à®Ÿà¯à®®à¯ à®‰à®³à¯à®¨à¯à®´à¯ˆà®•.,
++    credentialsRequired: à®¨à®¿à®°à¯à®µà®¾à®• à®ªà®¯à®©à®°à¯ à®ªà¯†à®¯à®°à¯à®®à¯ à®•à®Ÿà®µà¯à®šà¯à®šà¯Šà®²à¯ à®®à¯.,
++    monthlyVolunteersLabel: மாத தன்னார்வ வீரர்கள்,
++    monthlyVolunteersPlaceholder: மாத நிகழ்வுகளுக்கான தன்னார்வ வீரர்கள் எண்ணிக்கை,
++    specialVolunteersLabel: சிறப்பு நிகழ்வுகள் தன்னார்வ வீரர்கள்,
++    specialVolunteersPlaceholder: சிறப்பு நிகழ்வுகளுக்கான தன்னார்வ வீரர்கள் எண்ணிக்கை
+   }
+ };
+@@
+             <div className=admin-stats-grid>
+               <article className=admin-stat-card>
+@@
+             </div>
++
++            <div className=admin-volunteer-inputs>
++              <label className=admin-input-label>
++                <span>{adminText.monthlyVolunteersLabel}</span>
++                <input
++                  type=number
++                  min=0
++                  inputMode=numeric
++                  placeholder={adminText.monthlyVolunteersPlaceholder}
++                  value={monthlyVolunteerCount}
++                  onChange={(event) => setMonthlyVolunteerCount(event.target.value)}
++                />
++              </label>
++              <label className=admin-input-label>
++                <span>{adminText.specialVolunteersLabel}</span>
++                <input
++                  type=number
++                  min=0
++                  inputMode=numeric
++                  placeholder={adminText.specialVolunteersPlaceholder}
++                  value={specialVolunteerCount}
++                  onChange={(event) => setSpecialVolunteerCount(event.target.value)}
++                />
++              </label>
++            </div>
+ 
+             {adminSummaryLoading && <p>{adminText.summaryLoading}</p>}

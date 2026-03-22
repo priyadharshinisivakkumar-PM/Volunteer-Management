@@ -214,6 +214,37 @@ body {
   flex-wrap: wrap;
 }
 
+
+.admin-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem;
+  background: #ffffffd9;
+  border: 1px solid #d8e2db;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.admin-tab-btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-weight: 600;
+}
+
+.admin-tab-btn:hover {
+  transform: none;
+  background: #eef4ef;
+}
+
+.admin-tab-btn.active {
+  background: var(--leaf);
+  color: #ffffff;
+}
+
 .admin-login-form {
   max-width: 380px;
 }
@@ -222,6 +253,66 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.7rem;
+}
+
+
+.admin-settings {
+  border: 1px solid #d8e4dc;
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: #fbfdf9;
+}
+
+.admin-settings-header h4 {
+  margin: 0;
+}
+
+.admin-settings-grid {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 0.6rem;
+}
+
+.admin-settings-grid label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: #55645b;
+}
+
+.admin-settings-actions {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
+.batch-summary {
+  margin-top: 0.6rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.batch-title {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  color: #41534a;
+}
+
+.batch-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.batch-chip {
+  background: #edf4ef;
+  border: 1px solid #d8e4dc;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
 }
 
 .admin-stat-card {
@@ -265,10 +356,113 @@ body {
   background: #edf4ef;
   font-size: 0.88rem;
 }
+.attendance-date {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.attendance-label {
+  font-weight: 600;
+  color: #41534a;
+}
+
+.kyc-cell {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 150px;
+}
+
+.kyc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.kyc-status-badge.missing {
+  background: #f2dddd;
+  color: #8a3030;
+}
+
+.kyc-status-badge.pending {
+  background: #f9edcf;
+  color: #8b5f08;
+}
+
+.kyc-status-badge.verified {
+  background: #dff4e2;
+  color: #1f6b2b;
+}
+
+.kyc-status-badge.rejected {
+  background: #f4d9d9;
+  color: #8a3030;
+}
+
+.kyc-document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.kyc-action-btn {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.9rem;
+}
 
 .volunteer-form {
   display: grid;
   gap: 0.6rem;
+}
+
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 2.6rem;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #2f4d3c;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.password-toggle-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
+.password-toggle-icon:hover {
+  background: rgba(47, 77, 60, 0.08);
+  transform: translateY(-50%);
+}
+
+.password-toggle-icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 input,
@@ -543,6 +737,72 @@ button.danger {
 .special-events-panel h3 {
   margin: 0 0 0.5rem;
 }
+.visitor-pass-panel {
+  margin: 0.8rem 0 1rem;
+  border: 1px solid #d9e5dc;
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #ffffff, #f1f8f3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.visitor-pass-panel h3 {
+  margin: 0.15rem 0 0.25rem;
+}
+
+.visitor-pass-kicker {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4b7b5f;
+}
+
+.visitor-pass-cta {
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+.visitor-pass-modal {
+  width: min(520px, 100%);
+}
+
+.visitor-pass-form {
+  margin-top: 0.85rem;
+}
+
+.visitor-pass-date-field {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: #33453b;
+}
+
+.visitor-pass-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.visitor-pass-receipt-card {
+  margin-top: 0.85rem;
+  border: 1px solid #cfe7d5;
+  border-radius: 10px;
+  background: #f7fbf8;
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.visitor-pass-receipt-card p {
+  margin: 0;
+}
 
 .special-event-card {
   border: 1px solid #efd9aa;
@@ -738,6 +998,89 @@ button.danger {
   background: #f7faf8;
 }
 
+.identity-proof-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.8rem;
+  border: 1px solid #d8e4dc;
+  border-radius: 10px;
+  background: #f7fbf8;
+}
+
+.identity-proof-banner {
+  border: 1px solid #d8e4dc;
+  border-radius: 10px;
+  padding: 0.65rem 0.7rem;
+  background: #ffffff;
+}
+
+.identity-proof-title {
+  margin: 0;
+  font-weight: 700;
+  color: #274634;
+}
+
+.identity-proof-subtle,
+.identity-proof-status {
+  margin: 0;
+}
+
+.identity-proof-options {
+  margin-top: -0.1rem;
+}
+
+.identity-proof-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.92rem;
+  color: #2b4336;
+}
+
+.identity-proof-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #3f6d51;
+}
+
+.terms-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+  padding: 1rem;
+  background: #f9fdf9;
+  border: 1px solid #d6e1d7;
+  border-radius: 10px;
+}
+
+.terms-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #2b4336;
+}
+
+.terms-checkbox-label input[type="checkbox"] {
+  border: 1.5px solid #709d83;
+  border-radius: 4px;
+  padding: 0.35rem;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  accent-color: #3f6d51;
+}
+
+.terms-checkbox-label input[type="checkbox"]:hover {
+  border-color: #3f6d51;
+}
+
 .team-members-title {
   margin: 0;
   font-size: 0.92rem;
@@ -807,6 +1150,22 @@ button.danger {
 }
 
 @media (max-width: 860px) {
+  .visitor-pass-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .visitor-pass-cta {
+    width: 100%;
+  }
+
+  .visitor-pass-form-actions {
+    flex-direction: column;
+  }
+
+  .visitor-pass-form-actions button {
+    width: 100%;
+  }
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -903,3 +1262,5 @@ button.danger {
     transform: translateY(0);
   }
 }
+
+
