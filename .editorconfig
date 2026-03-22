@@ -1,0 +1,9 @@
+﻿root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+[*.{js,jsx,ts,tsx,css,html,json,md,txt}]
+charset = utf-8
